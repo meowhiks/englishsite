@@ -59,19 +59,21 @@
             position: relative;
             z-index: 10;
             display: flex;
-            align-items: center;
+            flex-direction: column; /* Изменено на колонку для мобильных */
+            align-items: center; /* Центрирование элементов */
         }
 
         .layout-info img {
-            max-width: 200px;
-            margin-right: 20px;
+            max-width: 100%; /* Полная ширина для изображений */
+            height: auto; /* Автоматическая высота для сохранения пропорций */
+            margin-bottom: 10px; /* Отступ снизу для изображений */
         }
 
         p {
             font-size: 16px;
             color: #333;
             line-height: 1.6;
-            flex-grow: 1;
+            text-align: center; /* Центрирование текста */
         }
 
         button {
@@ -89,9 +91,17 @@
             display: none;
         }
 
-        img {
-            width: 100%;
-            margin-top: 20px;
+        /* Медиазапросы для мобильных устройств */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 28px; /* Уменьшение размера заголовка */
+            }
+            p {
+                font-size: 14px; /* Уменьшение размера текста */
+            }
+            button {
+                width: 100%; /* Кнопки занимают полную ширину */
+            }
         }
     </style>
     <script>
@@ -141,6 +151,7 @@
         </div>
 
         <div class="layout-info">
+            <img src="microgreens.jpg" alt="Mother">
             <div>
                 <h2>My Mother</h2>
                 <p>My mother is a gardener. She grows microgreens, which is both healthy and a lot of fun for her.</p>
@@ -149,7 +160,6 @@
                     <p>Her passion for gardening brings vibrant life into our home. She often shares her harvest with the family, adding a personal touch to our meals.</p>
                 </div>
             </div>
-            <img src="microgreens.jpg" alt="Mother">
         </div>
 
         <div class="layout-info">
@@ -164,17 +174,6 @@
         </div>
 
         <div class="layout-info">
-            <div>
-                <h2>My Grandmother</h2>
-                <p>My grandmother came from Siberia, and she knows a ton of amazing recipes that she lovingly shares with us.</p>
-                <button onclick="toggleContent('grandma-more')">Learn More</button>
-                <div id="grandma-more" class="hidden-content">
-                    <p>Her kitchen is always filled with the aroma of traditional dishes, making family gatherings unforgettable. She often teaches me her secrets!</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="layout-info">
             <img src="europe.jpg" alt="Grandfather">
             <div>
                 <h2>My Grandfather</h2>
@@ -182,6 +181,17 @@
                 <button onclick="toggleContent('grandfather-more')">Learn More</button>
                 <div id="grandfather-more" class="hidden-content">
                     <p>His stories of adventure and exploration inspire me to travel and see the world myself someday. He loves sharing tales of his journeys!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="layout-info">
+            <div>
+                <h2>My Grandmother</h2>
+                <p>My grandmother came from Siberia, and she knows a ton of amazing recipes that she lovingly shares with us.</p>
+                <button onclick="toggleContent('grandma-more')">Learn More</button>
+                <div id="grandma-more" class="hidden-content">
+                    <p>Her kitchen is always filled with the aroma of traditional dishes, making family gatherings unforgettable. She often teaches me her secrets!</p>
                 </div>
             </div>
         </div>
@@ -211,27 +221,27 @@
                 <p>The living room is where our family gathers to relax and entertain guests. It’s spacious, with a large sofa and personal touches like family photos.</p>
                 <button onclick="toggleContent('livingroom-more')">Learn More</button>
                 <div id="livingroom-more" class="hidden-content">
-                    <p>This space reflects our family’s personality, combining comfort and style, making it the heart of our home where memories are created.</p>
+                    <p>This space reflects our family’s personality, combining comfort and style, making it the heart of our home where memories are made.</p>
                 </div>
             </div>
         </div>
 
         <div class="layout-info">
             <div>
-                <p>Our parents’ bedroom is a cozy retreat with soft lighting and a calming color palette, providing a peaceful escape.</p>
+                <p>Our parents' bedroom is a serene space designed for relaxation, featuring warm tones and comfortable furniture.</p>
                 <button onclick="toggleContent('parents-more')">Learn More</button>
                 <div id="parents-more" class="hidden-content">
-                    <p>It’s beautifully decorated with personal mementos and has a serene ambiance that invites relaxation and comfort.</p>
+                    <p>The peaceful ambiance is perfect for unwinding after a long day, showcasing our parents' style and comfort.</p>
                 </div>
             </div>
         </div>
-        
+
         <div class="layout-info">
             <div>
-                <p>The hallway connects all the rooms and is adorned with family photos, adding warmth and a sense of belonging to our home.</p>
+                <p>Finally, the hallway connects all the spaces, adorned with family pictures that tell our story.</p>
                 <button onclick="toggleContent('hallway-more')">Learn More</button>
                 <div id="hallway-more" class="hidden-content">
-                    <p>It’s a welcoming space that invites you into the heart of our family home, creating a sense of togetherness.</p>
+                    <p>This passage not only connects the rooms but also represents the journey of our family through various milestones and cherished moments.</p>
                 </div>
             </div>
         </div>
